@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google'
 import db from '@/utils/db'
 import ProductModel from '@/models/productModel'
-import ProductCard from '@/components/Main/product/ProductCard'
+import ProductCard from '@/components/product/ProductCard'
 import Layout from '@/components/Main/Layout'
 
 const inter = Inter({ subsets: ['latin'] })
