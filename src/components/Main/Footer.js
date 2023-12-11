@@ -3,22 +3,33 @@ import { FaCartShopping } from "react-icons/fa6";
 import { MdOutlinePeopleOutline } from "react-icons/md";
 import { BsTelephoneInbound } from "react-icons/bs";
 import { MdOutlineDashboard } from "react-icons/md";
+import useShoppingStore from "@/contex/shoppingStore";
 const Footer = () => {
+  const { cart } = useShoppingStore();
   const directionIcons = [
     {
       title: "حساب کاربری",
       linkTitle: "/dashboard",
-      icon: <MdOutlineDashboard size={24}/>,
+      icon: <MdOutlineDashboard size={24} />,
     },
     {
       title: "سبد خرید",
       linkTitle: "",
-      icon: <FaCartShopping size={24}/>,
+      icon: <FaCartShopping size={24} />,
+      cartValue: (
+        <div className=" text-pedram-2 text-l">
+          {cart?.length > 0 && (
+            <div className="pt-4">
+              {cart.reduce((acc, item) => acc + item.quantity, 0)}
+            </div>
+          )}
+        </div>
+      ),
     },
     {
       title: "تماس با ما",
       linkTitle: "",
-      icon: <BsTelephoneInbound size={24}/>,
+      icon: <BsTelephoneInbound size={24} />,
     },
 
     {
@@ -61,10 +72,12 @@ const Footer = () => {
           {directionIcons.map((item) => (
             <Link key={item.title} href={item.linkTitle}>
               <div className="flex  flex-col items-center  font-bold text-xs  text-gray-700	 relative group">
-                <div className="flex items-center">{item.icon}</div>
+                <div className="flex">
+                  <div >{item.cartValue}</div>
+                  <div className="flex items-center">{item.icon}</div>
+                </div>
                 <div className="my-1">{item.title}</div>
                 <div className="absolute  inset-x-0 bottom-0 h-0.5 bg-pedram-2 w-full transform scale-x-0 group-hover:scale-x-100 transition-transform"></div>
-
               </div>
             </Link>
           ))}

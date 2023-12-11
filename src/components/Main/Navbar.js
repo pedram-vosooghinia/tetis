@@ -3,8 +3,9 @@ import { FaCartShopping } from "react-icons/fa6";
 import { MdOutlinePeopleOutline } from "react-icons/md";
 import { BsTelephoneInbound } from "react-icons/bs";
 import { MdOutlineDashboard } from "react-icons/md";
-
+import useShoppingStore from "@/contex/shoppingStore";
 const Navbar = () => {
+  const { cart } = useShoppingStore();
   const lists = [
     {
       title: "درباره ما",
@@ -34,9 +35,7 @@ const Navbar = () => {
           />
         </div>
         <div className="hidden md:flex w-1/5 text-pedram-1  text-4xl font-bold">
-          <Link href="/">
-            TETISAN
-          </Link>
+          <Link href="/">TETISAN</Link>
         </div>
       </div>
       <div className="flex  justify-between hidden md:flex">
@@ -52,16 +51,25 @@ const Navbar = () => {
           ))}
         </div>
         <div className="flex">
-          <div className="mx-4 p-2 text-pedram-2  w-fit	text-gray-100 text-l rounded-lg font-bold bg-pedram-3">
-            <Link href="/login">ورود / ثبت نام</Link>
+          <div className="flex mx-4  items-center justify-between  w-fit	text-gray-50 text-l rounded-lg font-bold bg-pedram-1">
+            <Link href="/login" className="mx-4 pb-2">ورود / ثبت نام</Link>
           </div>
 
-          <div >
+          <div>
             <div className="flex flex-col items-center text-pedram-2 font-bold text-xs">
               <Link href="/" className="flex items-center">
-                <FaCartShopping size={24} />
+                <div className=" text-pedram-1"> 
+                  {cart?.length > 0 && (
+                    <div className="pt-4">
+                      {cart.reduce((acc, item) => acc + item.quantity, 0)}
+                    </div>
+                  )}
+                </div>
+                  <FaCartShopping size={24} />
               </Link>
-              <Link href="/" className="mt-1">سبد خرید</Link>
+              <Link href="/" className="mt-1">
+                سبد خرید
+              </Link>
             </div>
           </div>
         </div>

@@ -1,16 +1,17 @@
 //AddShoppingValues
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import React, { useState } from "react";
 import useShoppingStore from "@/contex/shoppingStore";
 const AddShoppingValues = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useShoppingStore();
-
-  const increaseQuantity = () => {
-    if (quantity < product?.validationValue) {
-      setQuantity(quantity + 1);
-    }
-  };
+    const increaseQuantity = () => {
+        if (quantity < product?.validationValue && quantity < product?.inventory) {
+          setQuantity(quantity + 1);
+        }
+      };
 
   const decreaseQuantity = () => {
     if (quantity > 1) {
@@ -20,7 +21,6 @@ const AddShoppingValues = ({ product }) => {
   const addItem = () => {
     const newItem = { ...product, quantity };
     addToCart(newItem);
-    console.log("Cart:", useShoppingStore.getState().cart);
   };
   return (
     <div className=" flex flex-col ">
@@ -47,6 +47,8 @@ const AddShoppingValues = ({ product }) => {
           افزودن به سبد خرید
         </button>
       </div>
+      <ToastContainer />
+
     </div>
   );
 };
