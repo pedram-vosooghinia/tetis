@@ -7,10 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        pedram: {
+          1: "#002642",
+          2: "#840032",
+          3: "#e59500",
+          4: "#efdada",
+          5: "#02040f",
+        },
       },
     },
   },
