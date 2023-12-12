@@ -7,7 +7,7 @@ function Layout({ title, children }) {
      
 
       <Head>
-        <title>{`${title} - Shopping`}</title>
+        <title>{`${title} - tetisan`}</title>
       </Head>
       <Navbar/>
       <div className="	">

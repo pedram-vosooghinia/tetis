@@ -14,7 +14,7 @@ const Footer = () => {
     },
     {
       title: "سبد خرید",
-      linkTitle: "",
+      linkTitle: "/cart",
       icon: <FaCartShopping size={24} />,
       cartValue: (
         <div className=" text-pedram-2 text-l">

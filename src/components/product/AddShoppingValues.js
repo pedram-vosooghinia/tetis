@@ -1,9 +1,9 @@
 //AddShoppingValues
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import React, { useState } from "react";
 import useShoppingStore from "@/contex/shoppingStore";
+
 const AddShoppingValues = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useShoppingStore();
@@ -18,7 +18,7 @@ const AddShoppingValues = ({ product }) => {
       setQuantity(quantity - 1);
     }
   };
-  const addItem = () => {
+  const addToCartHandler = () => {
     const newItem = { ...product, quantity };
     addToCart(newItem);
   };
@@ -41,7 +41,7 @@ const AddShoppingValues = ({ product }) => {
       </div>
       <div>
         <button 
-          onClick={addItem}
+          onClick={addToCartHandler}
         className="flex mx-auto rounded-md bg-pedram-3 text-gray-100 m-2 p-3">
           
           افزودن به سبد خرید

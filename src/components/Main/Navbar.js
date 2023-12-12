@@ -57,7 +57,7 @@ const Navbar = () => {
 
           <div>
             <div className="flex flex-col items-center text-pedram-2 font-bold text-xs">
-              <Link href="/" className="flex items-center">
+              <Link href="/cart" className="flex items-center">
                 <div className=" text-pedram-1"> 
                   {cart?.length > 0 && (
                     <div className="pt-4">

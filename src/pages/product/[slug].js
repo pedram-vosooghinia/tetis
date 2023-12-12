@@ -22,7 +22,7 @@ function ProductPage({ product }) {
 
   return (
     <>
-      <Layout>
+      <Layout title="product">
         <div className="flex  md:mt-40 mt-20 flex-col justify-center md:flex-row-reverse">
           <div className="max-w-xs object-cover m-8 ">
             <img
