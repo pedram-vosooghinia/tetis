@@ -4,17 +4,13 @@ import Navbar from "./Navbar";
 function Layout({ title, children }) {
   return (
     <>
-     
-
       <Head>
         <title>{`${title} - tetisan`}</title>
       </Head>
-      <Navbar/>
-      <div className="	">
-        <main>{children}</main>
-      </div>
-      <div className=" ">
-        <Footer/>
+      <Navbar />
+      <div className="min-h-screen flex flex-col">
+        <main className="flex-1">{children}</main>
+        <Footer />
       </div>
     </>
   );

@@ -2,7 +2,6 @@ import Image from "next/image";
 import Layout from "@/components/Main/Layout";
 import useShoppingStore from "@/contex/shoppingStore";
 import { useRouter } from "next/router";
-import EditShoppingValues from "@/components/cart/editShoppingValues";
 const CartPage = () => {
   const { cart } = useShoppingStore();
   const router = useRouter();
@@ -14,11 +13,11 @@ const CartPage = () => {
   return (
     <>
       <Layout title="Shopping Cart">
-        <div className="mt-28 mx-4 mb-10 rtl">
-          <h1 className="mb-4 text-xl">سبد خرید</h1>
+        <div className="mt-40 mx-4 mb-10 rtl">
+          <h1 className="mb-4 mx-2 text-xl ">سبد خرید</h1>
 
           {cart.length === 0 ? (
-            <div>سبد شما خالی می‌باشد</div>
+            <div className="flex  mt-4 mx-4 w-full ">سبد شما خالی می‌باشد</div>
           ) : (
             <div>
               {cart.map((item) => (
@@ -59,7 +58,6 @@ const CartPage = () => {
                   </div>
                 </div>
               </div>
-<EditShoppingValues/>
               <button
                 className="rounded-xl bg-gray-700 text-white px-4 py-2"
                 onClick={() => router.push("login?redirect=/shipping")}

@@ -1,12 +1,12 @@
 
-const EditShoppingValues = () => {
+// const EditShoppingValues = () => {
 
-  return (
-    <div>
-    vjnfd;avnsmd
+//   return (
+//     <div>
+//     vjnfd;avnsmd
 
-    </div>
-  );
-};
+//     </div>
+//   );
+// };
 
-export default EditShoppingValues;
+// export default EditShoppingValues;

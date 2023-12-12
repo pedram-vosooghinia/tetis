@@ -50,7 +50,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-pedram-4 relative w-full text-pedram-2">
+    <footer className="bg-pedram-4 relative w-full text-pedram-2 mt-10 md:mt-0">
       <div className="flex md:inline-flex	justify-between items-center rtl w-full  hidden ">
         {links.map((category) => (
           <div key={category.title} className="text-lg px-32 py-4 w-1/2">
